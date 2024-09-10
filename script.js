@@ -10,13 +10,13 @@ function formatDate(date) {
 document.getElementById('startDateDisplay').textContent = formatDate(startDate);
 
 // Animation function
-function animateValue(element, start, end, duration) {
+function animateValue(element, start, end, duration, prefix = '') {
     let startTimestamp = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
         const current = Math.floor(progress * (end - start) + start);
-        element.textContent = current.toLocaleString();
+        element.textContent = prefix + current.toLocaleString();
         if (progress < 1) {
             window.requestAnimationFrame(step);
         }
@@ -43,7 +43,7 @@ function updateCounters() {
 
     // Update potential recycling cost counter
     const recyclingCost = Math.floor(secondsElapsed * 6.33);
-    animateValue(document.getElementById('costCounter'), recyclingCost - 6, recyclingCost, 1000);
+    animateValue(document.getElementById('costCounter'), recyclingCost - 6, recyclingCost, 1000, '£');
 
     // Update fires counter
     const daysPassed = Math.floor(secondsElapsed / 86400);

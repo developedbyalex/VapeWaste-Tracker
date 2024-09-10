@@ -10,44 +10,42 @@
     <div class="container">
         <header>
             <h1>Vape Waste Dashboard</h1>
+            <div class="start-date">Counting from: <span id="startDateDisplay"></span></div>
         </header>
-        <div class="start-date">
-            <p>Counting from: <span id="startDateDisplay"></span></p>
-        </div>
-        <main>
-            <div class="grid">
-                <div class="counter large">
-                    <h2>Vapes Thrown Away</h2>
-                    <p id="disposedCounter">0</p>
-                </div>
-                <div class="counter">
+        
+        <main class="dashboard">
+            <section class="main-counter">
+                <h2>Vapes Thrown Away</h2>
+                <p id="disposedCounter">0</p>
+            </section>
+            
+            <div class="secondary-counters">
+                <section class="counter">
                     <h2>Vapes Sold</h2>
                     <p id="soldCounter">0</p>
-                </div>
-                <div class="counter">
+                </section>
+                <section class="counter">
                     <h2>Lithium Wasted</h2>
                     <p id="lithiumCounter">0</p>
                     <span>electric car batteries</span>
-                </div>
-                <div class="counter">
+                </section>
+                <section class="counter">
                     <h2>Potential Recycling Cost</h2>
                     <p id="costCounter">£0</p>
-                </div>
-                <div class="counter">
+                </section>
+                <section class="counter">
                     <h2>Fires Caused</h2>
                     <p id="fireCounter">0</p>
                     <span>by lithium batteries</span>
-                </div>
-            </div>
-            <div class="info-panel">
-                <h2>About This Data</h2>
-                <p>These are estimated values based on data from a BBC article. The counters start from an arbitrary date and update in real-time based on calculated rates.</p>
-                <p>Source: <a href="https://www.bbc.co.uk/news/business-66740556" target="_blank" rel="noopener noreferrer">BBC News - The growing mountain of vape waste</a></p>
+                </section>
             </div>
         </main>
-        <footer>
-            <p>Data source: BBC News article on vape waste</p>
-        </footer>
+        
+        <section class="info-panel">
+            <h2>About This Data</h2>
+            <p>These are estimated values based on data from a BBC article. The counters start from an arbitrary date and update in real-time based on calculated rates.</p>
+            <p>Source: <a href="https://www.bbc.co.uk/news/business-66740556" target="_blank" rel="noopener noreferrer">BBC News - The growing mountain of vape waste</a></p>
+        </section>
     </div>
     <script src="script.js"></script>
 </body>
